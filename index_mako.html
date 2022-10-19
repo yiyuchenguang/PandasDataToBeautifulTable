@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>Python PandasDataFrame 保存到HTML表格</title>
+  <link rel="stylesheet" href="./style.css">
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+
+<div class="container" >
+	<table>
+		<thead>
+			<tr>
+				% for column in py_object.columns:
+				<th>${column}</th>
+				%endfor
+			</tr>
+		</thead>
+		<tbody>
+		% for row_list in py_object.data.values.tolist():
+			<tr>
+				% for cell_value in row_list:
+				<td>${cell_value}</td>
+				%endfor
+			</tr>
+		%endfor
+		</tbody>
+	</table>
+</div>
+<!-- partial -->
+  
+</body>
+</html>
